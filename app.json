@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "Agon Preview",
+    "slug": "agon-preview",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "aura",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.arcadalabs.auracamera",
+      "infoPlist": {
+        "NSCameraUsageDescription": "AURA uses the camera to show live filters, face effects and AI backgrounds in real time. Frames stay on your device.",
+        "NSMicrophoneUsageDescription": "Audio is recorded only when you record a video, and it stays on your device.",
+        "NSPhotoLibraryUsageDescription": "AURA needs access to a single photo when you pick a background from your library.",
+        "NSPhotoLibraryAddUsageDescription": "AURA saves your exports to your photo library only when you ask."
+      }
+    },
+    "android": {
+      "package": "com.arcadalabs.auracamera",
+      "adaptiveIcon": {
+        "backgroundColor": "#05060A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "AURA uses the camera to show live filters, face effects and AI backgrounds in real time. Frames stay on your device.",
+          "microphonePermission": "Audio is recorded only when you record a video, and it stays on your device."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "AURA needs access to a single photo when you pick a background from your library.",
+          "savePhotosPermission": "AURA saves your exports to your photo library only when you ask.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "AURA reads the single photo you pick as a background. Nothing else is accessed."
+        }
+      ],
+      "expo-font",
+      "expo-sharing"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "552f0665-e30d-4f11-9ea9-97bc22a22809"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/552f0665-e30d-4f11-9ea9-97bc22a22809"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "owner": "arcadalabs",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ]
+  }
+}
